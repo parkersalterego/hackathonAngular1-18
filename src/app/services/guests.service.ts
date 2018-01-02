@@ -20,4 +20,8 @@ export class GuestsService {
 
   constructor() { }
 
+  addGuest(guest) {
+    this.currentGuests.push(guest);
+  }
+
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -8,6 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { NewGuestComponent } from './components/new-guest/new-guest.component';
 import { CurrentGuestsComponent } from './components/current-guests/current-guests.component';
 import { GuestsService } from './services/guests.service';
+import { UserService } from './services/user.service';
+import { ValidateGuestService } from './services/validate-guest.service';
+import { ReturningGuestComponent } from './components/returning-guest/returning-guest.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 
 @NgModule({
@@ -15,14 +20,19 @@ import { GuestsService } from './services/guests.service';
     AppComponent,
     LoginComponent,
     NewGuestComponent,
-    CurrentGuestsComponent
+    CurrentGuestsComponent,
+    ReturningGuestComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RoutingModule
   ],
   providers: [
-    GuestsService
+    GuestsService,
+    ValidateGuestService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

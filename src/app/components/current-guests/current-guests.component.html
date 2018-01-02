@@ -1,3 +1,5 @@
-<p>
-  current-guests works!
-</p>
+<div class="guest-card" *ngFor="let currentGuest of currentGuests">
+  <h1>{{currentGuest.firstName}} {{currentGuest.lastName}}</h1>
+  <h3>ID: {{currentGuest.ID}}</h3>
+  <button (click)="checkoutGuest(currentGuest)">Checkout</button>
+</div>

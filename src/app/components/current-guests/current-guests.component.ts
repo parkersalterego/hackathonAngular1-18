@@ -21,4 +21,8 @@ export class CurrentGuestsComponent implements OnInit {
 
   }
 
+  checkout(guest) {
+
+  }
+
 }
