@@ -21,7 +21,6 @@
 }
 
 .heading {
-    color: red;
     text-align: center;
 }
 
@@ -32,11 +31,12 @@
 }
 
 .btn:hover {
-    background-color: #fff;
     color: red;
+    background-color: #fff;
     border: 1.5px solid red;
 }
 
-label {
+label, .heading {
     color: red;
 }
+
