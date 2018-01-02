@@ -1,0 +1,42 @@
+.container-fluid {
+    background-color: #000;
+}
+#main {
+    background-color: #000;
+    font-family: times;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6 minmax(150px, auto));
+    padding: 20px;
+    height: 100%;
+}
+
+#section_a {
+    grid-column: 4 / span 6;
+    grid-row: 3 / span 4;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: 3px solid red;
+}
+
+.heading {
+    color: red;
+    text-align: center;
+}
+
+
+.btn {
+    background-color: red;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: red;
+    border: 1.5px solid red;
+}
+
+label {
+    color: red;
+}

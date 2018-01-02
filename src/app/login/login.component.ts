@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   password: string;
   loginInputs;
   constructor() { 
-
+  
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmission() {
-    console.log('Your username is ' + this.username);
+    console.log('Your username is ' + this.loginInputs.get('username').value);
   }
 
 }
