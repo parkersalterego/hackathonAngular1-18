@@ -4,8 +4,9 @@ export interface Guest {
   ID: Boolean;
   Stays: [
     {
-      startDate: DateTimeFormat;
-      endDate: DateTimeFormat;
+      startDate: String;
+      endDate: String;
+      location: String;
     }
   ];
 }
