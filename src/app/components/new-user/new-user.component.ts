@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
+    name: string;
+    email: string;
+    username: string;
+    password: string;
 
   constructor(
     private validateUserService: ValidateUserService,

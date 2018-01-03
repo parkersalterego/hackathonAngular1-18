@@ -12,18 +12,27 @@ import { Router } from '@angular/router';
 
 
 export class NewGuestComponent implements OnInit {
+
+  firstName: string;
+  lastName: string;
+  ID: number;
+  
   constructor(
     private validateGuestService: ValidateGuestService,
     private guestsService: GuestsService,
     private router: Router
-  ) { }
+  ) { 
+    
+  }
 
   currentGuests: [Guest];
 
   ngOnInit() {
+  
   }
 
   onRegisterSubmit() {
+    
     const guest = {
       firstName: this.firstName,
       lastName: this.lastName,
