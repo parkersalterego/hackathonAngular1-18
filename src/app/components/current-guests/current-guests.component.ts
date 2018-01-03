@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { GuestsService } from '../../services/guests.service';
 import { Guest } from '../../models/guest';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-current-guests',
@@ -12,17 +13,25 @@ import { Guest } from '../../models/guest';
 export class CurrentGuestsComponent implements OnInit {
   currentGuests: [Guest];
 
-  constructor(public guestsService: GuestsService) { }
+  constructor(private guestsService: GuestsService, private http: Http) {
+    this.guestsService.getGuests().subscribe(guests => {
+      this.currentGuests = guests;
+    });
+  }
 
   ngOnInit() {
 
-    this.currentGuests = this.guestsService.currentGuests;
-    console.log(this.currentGuests);
 
   }
 
-  checkout(guest) {
-
+  checkoutGuest(id) {
+    this.guestsService.deleteGuest(id).subscribe(res => {
+      for (let i = 0; i < this.currentGuests.length; i++) {
+        if (this.currentGuests[i]._id === id) {
+          this.currentGuests.splice(i, 1);
+        }
+      }
+    });
   }
 
 }

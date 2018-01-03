@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
   templateUrl: './new-guest.component.html',
   styleUrls: ['./new-guest.component.css']
 })
+
+
 export class NewGuestComponent implements OnInit {
   constructor(
     private validateGuestService: ValidateGuestService,
     private guestsService: GuestsService,
     private router: Router
   ) { }
+
+  currentGuests: [Guest];
 
   ngOnInit() {
   }
@@ -32,8 +36,10 @@ export class NewGuestComponent implements OnInit {
       return false;
     }
 
-    this.guestsService.addGuest(guest);
-    console.log(this.guestsService.currentGuests);
+    this.guestsService.addGuest(guest).subscribe(guest => {
+      console.log(guest);
+    });
+
     this.router.navigate(['/current-guests']);
   }
 

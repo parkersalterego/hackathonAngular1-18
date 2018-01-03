@@ -7,5 +7,8 @@ user: User;
 
   constructor() { }
 
+  addUser() {
+  }
+
 }
 

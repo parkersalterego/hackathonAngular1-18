@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { NewUserComponent } from './components/new-user/new-user.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RoutingModule
   ],
   providers: [

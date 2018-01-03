@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ValidateUserService } from '../../services/validate-user.service';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-user',
@@ -7,35 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private validateUserService: ValidateUserService,
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
 
   }
 
   onRegisterSubmit() {
-    const guest = {
-      firstName: this.name,
-      lastName: this.email,
+    const user: User = {
+      name: this.name,
+      email: this.email,
       username: this.username,
       password: this.password
     };
 
     // required fields
-    if (!this.validateGuestService.validateRegister(guest)) {
+    if (!this.validateUserService.validateRegister(user)) {
       console.log('please fill in all fields');
       return false;
     }
 
     // Validate email
 
-    if (!this.validateGuestService.validateEmail(guest.email)) {
+    if (!this.validateUserService.validateEmail(user.email)) {
       console.log('Please use a valid email');
       return false;
     }
 
-    this.guestsService.addGuest(guest);
-    console.log(this.guestsService.currentGuests);
+    this.userService.addUser(user);
     this.router.navigate(['/current-guests']);
   }
 
