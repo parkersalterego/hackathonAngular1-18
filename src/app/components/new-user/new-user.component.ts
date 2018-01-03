@@ -42,7 +42,7 @@ export class NewUserComponent implements OnInit {
       return false;
     }
 
-    this.userService.addUser(user);
+    // this.userService.addUser(user);
     this.router.navigate(['/current-guests']);
   }
 
