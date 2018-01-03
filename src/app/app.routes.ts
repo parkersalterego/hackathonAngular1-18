@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NewGuestComponent } from './components/new-guest/new-guest.component';
 import { CurrentGuestsComponent } from './components/current-guests/current-guests.component';
-import { RegisterComponent } from './components/register/register.component';
+import { ReturningGuestComponent } from './components/returning-guest/returning-guest.component';
 
 const routes: Routes = [
     {
@@ -20,8 +20,8 @@ const routes: Routes = [
       component: CurrentGuestsComponent
     },
     {
-      path: 'register',
-      component: RegisterComponent
+      path: 'returning-guest',
+      component: ReturningGuestComponent
     }
 ];
 

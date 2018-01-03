@@ -1,4 +1,5 @@
 export interface Guest {
+  _id: String;
   firstName: String;
   lastName: String;
   ID: Boolean;
