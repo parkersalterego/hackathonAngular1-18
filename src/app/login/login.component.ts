@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -9,20 +12,24 @@ import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  loginInputs;
-  constructor() { 
+  name: string;
+  email: string;
+  loginUser: [User];
+
+  constructor(private user:User, private userService: UserService, private router: Router) { 
   
   }
 
   ngOnInit() {
-    this.loginInputs = new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl('')
-    });
+    const user: User = {
+      username: this.username,
+      password: this.password,
+      name: this.name,
+      email: this.email
+    };
   }
 
   onLoginSubmission() {
-    console.log('Your username is ' + this.loginInputs.get('username').value);
+    console.log(this.username);
+    };
   }
-
-}
