@@ -13,6 +13,7 @@ user: [User];
     return this.http.post('http://localhost:3000/user', user)
       .map(res => res.json());
   }
+
   //Was going to add this to see if this was going to help with component...
   // getUsers(user) {
   //   return this.http.get('http://localhost:3000/user')

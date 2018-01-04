@@ -5,10 +5,11 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
@@ -16,8 +17,8 @@ export class LoginComponent implements OnInit {
   email: string;
   loginUser: [User];
 
-  constructor(private user:User, private userService: UserService, private router: Router) { 
-  
+  constructor(private user: User, private userService: UserService, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -26,10 +27,14 @@ export class LoginComponent implements OnInit {
       password: this.password,
       name: this.name,
       email: this.email
+
     };
+
   }
 
   onLoginSubmission() {
-    console.log(this.username);
-    };
+    // console.log(this.username);
+
+    }
+
   }
